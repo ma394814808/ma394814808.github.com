@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=640,minimal-ui, target-densitydpi=device-dpi,maximum-scale=2.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>织麦麦红白袜过圣诞</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/style.css" rel="stylesheet">
+<script src="js/zepto.min.js"></script>
+<script src="js/main1.js"></script>
+</head>
+<body>
+<div id='bg' class="breathe"></div>
+<div id='bg2' class=""></div>
+<!-- 开始页：start -->
+<div id="startPage">
+	<header id="header" class="fix">
+		<div class="charity"></div>
+		<!-- <div class="mcdonald_logo"></div> -->
+	</header>
+	<div class="santa_claus"></div>
+	<div class="socks_text"></div>
+	<div class="center"></div>
+	<div class="socks"></div>
+	<div class="text fix">
+	<!-- 	<var>20</var>
+		<div>秒你能织多长，<br>来试试吧！</div> -->
+	</div>
+	<footer id="startGameBtn"></footer>
+</div>
+<!-- 开始页：start -->
+
+<!-- 游戏页：start -->
+<div id="gamePage">
+	<!-- 长袜 -->
+	<div id="lSocks"></div>
+	<!-- 头部信息条 -->
+	<div id="integralBar" class="fix">
+		<span id="grade"><var>0</var> CM</span>
+		<span id="time"><var>20″00</var></span>
+	</div>
+	<!-- 线 -->
+	<div class="line"></div>
+	<!-- 游戏开始后的线 -->
+	<div id="game_line" class="redyarn_rdnum">
+		<div id="redyarn_rdnum" class="active"><var></var></div>
+		<div id="whtyarn_rdnum"></div>
+	</div>
+	<!-- 倒计时 -->
+	<div id="countDown">3</div>
+	<!-- 毛线团 -->
+	<div id="yarn">
+		<div id="redyarn" data-state="1"></div>
+		<div id="whtyarn" data-state="0"></div>
+		<!-- 遮罩层 -->
+		<span id="yarn_mask" class="whtyarn_rdnum"></span>
+	</div>
+	<!-- 毛线针 -->
+	<div id="needle">
+		<div id="lneedle"></div>
+		<div id="rneedle"></div>
+	</div>
+	<!-- 毛线团遮层 -->
+	<div id="yarn_m">
+		<div id="redyarn_m" data-id="redyarn" data-state="1"></div>
+		<div id="whtyarn_m" data-id="whtyarn" data-state="0"></div>
+	</div>
+	<!-- 手指 -->
+	<div id="leftfinger" class="finger"></div>
+	<div id="rightfinger" class="finger"></div>
+	<!-- 游戏结束 -->
+	<div id="endGameTitle"></div>
+</div>
+<!-- 游戏页：end -->
+
+<!-- 结果页：start -->
+<div id="resultPage">
+	<div id="result_score">
+		<div class="text1">您织了<var id="resultNum"></var>厘米的麦麦红白袜</div>
+		<div class="text2">比全国<var id="resultPercent"></var>的小伙伴更温暖</div>
+	</div>
+	<div id="result_score_img">
+		<p>获得称号： </p>
+		<img src="img/rank.png" alt="进阶麦粒">
+	</div>
+	<div id="resultTop"><div id="share"></div></div>
+	<a href="http://www.rmhc.org.cn/" id="resultText"  ontouchstart="return true;">12月3日至28日，向麦当劳叔叔之家慈善基金捐款20元就可获赠此圣诞爱心单品。<br><strong>点击了解麦当劳叔叔之家 &gt;&gt;</strong></a>
+	<!-- <div id="resultText2">织麦麦红白袜，<br>支持麦当劳叔叔之家慈善基金会，<br>为更多病童提供“家以外的家”。</div> -->
+	<div id="resultText2">邀请朋友一起织麦麦红白袜，支持麦当劳叔叔之家慈善基金圣诞爱心大行动，为更多病童提供“家以外的家”，让他们一起感受圣诞的温情和欢乐。</div>
+	<div id="resultShare"><div></div></div>
+</div>
+<!-- 结果页：end -->
+
+<!-- loading ：start-->
+<div id="loading">
+	<div>
+		<p><img src="img/loading.gif" alt="loading" height="349" ></p>
+		<p>正在加载中...<var id="loadingNum">0</var>%</p>
+	</div>
+</div>
+<!-- loading ：end-->
+
+<!-- 请将屏幕竖向浏览：start -->
+<div class="orientation_set"><div>请将屏幕竖向浏览<br/>并在微信端打开</div></div>
+<!-- 请将屏幕竖向浏览：end -->
+<script>
+// 微信分享设置
+window.shareData = {
+    "imgUrl": "http://sl.fogoo.cc/work/2014/Q4/businessApp/McdonaldSocks_Christmas/img/logo.gif",
+    "timeLineLink": "http://sl.fogoo.cc/work/2014/Q4/businessApp/McdonaldSocks_Christmas/index.html",
+    "tTitle": '和我一起来织双暖暖的麦麦红白袜吧！',
+    "tContent": '支持麦当劳叔叔之家圣诞行动，得圣诞爱心单品红白袜！'
+};
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+            "img_url": window.shareData.imgUrl,
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+        })
+    });
+
+    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+        WeixinJSBridge.invoke('shareTimeline', {
+            "img_url": window.shareData.imgUrl,
+            "img_width": "120",
+            "img_height": "120",
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+        });
+    });
+}, false);
+</script>
+</body>
+</html>

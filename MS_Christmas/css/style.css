@@ -1,0 +1,274 @@
+@charset "utf-8";
+/**
+* @info		麦当劳叔叔的红白袜子
+* @date		2014-09-18
+* @author 	dongjianghao
+**/
+/* reset */
+html,body,h1,h2,h3,div,dl,dt,dd,ul,ol,li,p,table,th,td,form,input,button,textarea{margin:0;padding:0;}
+header,footer,article{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+html,body,fieldset,img{border:0;}
+i,em,var{font-style:normal;}
+li{list-style:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+var,strong,em,i,s,b{list-style:none;font-style:normal;}
+body{font-size:12px;font-family:'微软雅黑',Microsoft YaHei,'\5FAE\8F6F\96C5\9ED1',Microsoft Yahei,Verdana,Calibri,Helvetica,Arial,sans-serif;color:#000;min-height: 100%;_height:100%;}
+input,select,textarea{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-webkit-appearance:button;
+	-moz-appearance:button;
+	-o-appearance:button;
+	-ms-appearance:button;
+	width:100%;
+	background:#fff;
+	color:#999;
+	font-family:'微软雅黑',Microsoft YaHei;
+	border:1px solid #cecdce;
+}
+.fix{zoom:1;}
+.fix:before,.fix:after{content:'';display:block;overflow:hidden;visibility:hidden;font-size:0;line-height:0;width:0;height:0;}
+.fix:after{clear:both;}
+a{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;}
+/*结构*/
+html{height:100%;}
+body{width:640px;margin:0 auto;background:#b9e2e3;}
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;background:url(../img/snow_bg.png) 0 0 no-repeat;background-size:100% 100%;}
+#bg2{position:fixed;bottom:0;left:0;width:100%;height:400px;background:url(../img/tree.png) 0 0 no-repeat;}
+.game #bg,.gaming #bg{background:url(../img/snow_bg.png) 0 0 no-repeat;background-size:100% 100%;}
+/*公用图案*/
+.charity,
+.mcdonald_logo,
+.socks,
+#startPage .center,
+#startPage .text var,
+#startGameBtn,
+#startPage .socks_text
+{
+	background:url(../img/bg01.png) no-repeat;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+.charity{width:146px;height:105px;}
+.mcdonald_logo{width:94px;height:76px;background-position:-146px 0;}
+.socks{width:412px;height:301px;background-position:center -110px;}
+
+/*loading*/
+#loading{position:absolute;top:0;left:0;height:100%;width:100%;font-size:48px;text-align:center;color:#ec1e24;}
+#loading>div{position:absolute;width:100%;top:50%;margin-top:-210px;}
+
+/*开始页*/
+#startPage,#gamePage,#resultPage{position:absolute;height:100%;width:100%;display:none;overflow:hidden;}
+#header .charity{float:left;margin-top:27px;margin-left:40px;}
+#header .mcdonald_logo{float:right;margin-top:40px;margin-right:48px;}
+#startPage .socks_text{position:absolute;width:100%;height:78px;top:115px;background-position:0 -809px;}
+#startPage .center{position:relative;height:308px;margin-top:194px;background-position:0 -412px;}
+#startPage .socks{position:absolute;width:100%;top:190px;-webkit-transition:all .5s ease-in-out;}
+/*#startPage .text{position:absolute;height:160px;width:100%;bottom:186px;background-position:center -888px;}*/
+#startPage .text{
+	position:absolute;height:173px;width:100%;bottom:186px;background-position:center -888px;
+	background:url(../img/christmas_spirit.png) center -144px no-repeat;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+#startPage .santa_claus{position:absolute;top:3.2%;right:5%;width:134px;height:134px;background:url(../img/christmas_spirit.png) 0 0 no-repeat;}
+/*#startPage .text > var{float:left;width:134px;height:110px;background-position:-240px 0;text-align:center;line-height:140px;color:#ec1e24;font-size:60px;font-weight:bold;}
+#startPage .text > div{float:left;padding:47px 0 0 12px;font-size:48px;color:#ec1e24;line-height:58px;}*/
+#startGameBtn{position:absolute;bottom:73px;left:0;width:100%;height:87px;background-position:0 -722px;}
+/*提示页-游戏页*/
+.game #startPage .socks{top:12%;-webkit-transform: scale(0.7, 0.7);}
+#gamePage .line,
+#redyarn,
+#whtyarn,
+#leftfinger,
+#rightfinger,
+#lneedle,
+#rneedle,
+#integralBar,
+#lSocks
+{
+	background:url(../img/bg02.png) no-repeat;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+/*线、线团*/
+/*#gamePage .line{position:absolute;bottom:360px;width:100%;height:221px;}*/
+#gamePage .line{position:absolute;bottom:35.7%;width:100%;height:221px;}
+#gamePage .line.line1{bottom:347px;background-position:0 -795px;height:110px;}
+#redyarn{position:absolute;bottom:151px;left:66px;width:207px;height:210px;background-position:0 -563px;}
+#whtyarn{position:absolute;bottom:151px;right:72px;width:204px;height:210px;background-position:-207px -563px;}
+#redyarn_m{position:absolute;bottom:151px;left:66px;width:207px;height:210px;}
+#whtyarn_m{position:absolute;bottom:151px;right:72px;width:204px;height:210px;}
+#redyarn_m,#whtyarn_m{z-index:3;}
+/*毛线针*/
+#lneedle{position:absolute;width:51px;height:232px;bottom:-999px;left:150px;background-position:-412px -563px;z-index:2;}
+#rneedle{position:absolute;width:51px;height:232px;bottom:-999px;;right:146px;background-position:-463px -563px;z-index:2;}
+.game #lneedle,.gaming #lneedle{-webkit-animation:bottomToTop 1.5s forwards .5s;}
+.game #rneedle,.gaming #rneedle{-webkit-animation:bottomToTop 1.5s forwards 1s;}
+/*手指*/
+#leftfinger{position:absolute;left:0;bottom:0;width:263px;height:342px;background-position:0 -221px;z-index:3;}
+#rightfinger{position:absolute;right:0;bottom:0;width:263px;height:342px;background-position:-370px -221px;z-index:3;}
+/*积分条*/
+#integralBar{position:absolute;top:0;left:0;width:100%;height:122px;padding-top:9px;background-position:0 -1314px;font-family:Arial;font-size:30px;line-height:90px;display:none;color:#c62712;}
+#integralBar var{font-size:40px;}
+#grade{float:left;margin-left:115px;}
+#time{float: right;margin-right: 61px;}
+/*长袜子*/
+#lSocks{position:absolute;top:131px;left:50%;width:332px;height:409px;margin-left:-82px;background-position:0 -905px;display:none;}
+/*游戏开始显示*/
+.gaming #integralBar,
+.gaming #lSocks{
+	display:block;
+}
+/*3秒倒计时*/
+#countDown{position:absolute;width:100%;height:200px;bottom:501px;line-height:200px;text-align:center;font-size:200px;color:#ffcf25;text-shadow:1px 9px 3px #fff;display:none;}
+/*线条、心形切换背景*/
+#redyarn_rdnum,
+#whtyarn_rdnum,
+#yarn_mask,
+#heart,
+#endGameTitle,
+#resultTop
+{
+	background:url(../img/bg03.png) no-repeat;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+#game_line{position:absolute;width:359px;top:276px;left:50%;bottom:344px;margin-left:-162px;display:none;}
+#game_line.redyarn_rdnum{background:url(../img/line1.png) no-repeat;background-size: 100% 100%;}
+#game_line.whtyarn_rdnum{background:url(../img/line2.png) no-repeat;background-size: 100% 100%;}
+#redyarn_rdnum{position:absolute;width:148px;height:114px;-webkit-transform: rotate(10deg);left: -43px;bottom: 114px;background-position:0 -113px;}
+#whtyarn_rdnum{position:absolute;width:148px;height:114px;-webkit-transform: rotate(-5deg);right:-57px;bottom: 114px;background-position:0 -113px;}
+#game_line>div{font-size:60px;color:#ec1e24;text-align:center;line-height:114px;}
+.active#redyarn_rdnum{background-position: 0 0;}
+.active#whtyarn_rdnum{background-position: 0 -227px;color:#fff;}
+/*线团遮罩*/
+#yarn_mask{position:absolute;bottom:151px;width:204px;height:210px;background-position:-147px 0;}
+#yarn_mask.whtyarn_rdnum{right:76px;}
+#yarn_mask.redyarn_rdnum{left:65px;}
+/*漂浮心形*/
+#heart{position:absolute;width:74px;height:56px;background-position:-640px -342px;}
+#heart.whtyarn_rdnum{height:57px;background-position:-640px -397px;}
+/*游戏结束提示*/
+#endGameTitle{position:absolute;width:491px;height:314px;top:-999px;left:50%;margin-left:-245px;background-position:-354px 0;}
+#resultTop{position:absolute;bottom:270px;left:0;width:100%;height:229px;background-position:0 -341px;}
+/*#resultTop > div{margin-top:-38px;color:#819abe;text-align:center;}
+#resultTop .text1{font-size:36px;line-height:36px;}
+#resultTop .text1 > var{font-size:48px;color:#ec1e24;padding:0 10px;font-family:Arial;}
+#resultTop .text2{margin:17px 0 15px;font-size:30px;line-height:30px;}
+#resultTop .text2 > var{font-size:36px;color:#ecf228;padding:0 10px;font-family:Arial;}*/
+#resultText{
+	position:absolute;
+	width:568px;
+	bottom:30px;
+	left:50%;
+	margin-left:-294px;
+	padding:25px 10px;
+	font-size:31px;
+	border-radius:15px;
+	border:3px solid #fff;
+	background:#e2454a;
+	color:#fff;
+	text-decoration:none;
+	text-align:center;
+	line-height:50px;
+}
+#resultText strong{font-weight:bold;font-size:32px;text-shadow: 0px 0px 2px #fff;}
+#resultText2{position:absolute;padding:0 31px;width:100%;top:579px;line-height:60px;font-size:38px;color:#ec1e24;display:none;-webkit-box-sizing:border-box;}
+#resultShare{position:absolute;width:100%;height:100%;left:0;top:0;display:none;z-index:9;}
+#resultShare >div{height:479px;background:url(../img/bg03.png) 142px -661px no-repeat;background-color:rgba(15,30,30,.7);}
+.active #resultShare,.active #resultText2{display:block;}
+.active #resultText{display:none;}
+#share{position:absolute;width:202px;height:157px;bottom:0;left:50%;margin-left:-93px;}
+/*故事页*/
+#storyPage{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
+#storyPage .title{width:594px;height:86px;border-radius:10px;margin:25px auto 0;color:#495059;background:#dffaff url(../img/title.png) 50% 50% no-repeat;}
+#storyPage .title em{color:#fb3343;}
+#storyPage > footer{position:absolute;bottom:33px;width:100%;text-align:center;}
+#storyPage > footer >a{display:inline-block;width:265px;height:88px;margin:0 15px;background:#ead15c;border:1px solid #e0eb60;border-radius:10px;line-height:88px;text-align: center;color:#596cb0;font-size:36px;text-decoration: none;}
+#storyPage #resultShare{z-index:999;height:100%;}
+#storyPage #resultShare .text{position:absolute;top:479px;height:100%;padding-top:100px;width:100%;background:#b9e2e3 url(../img/snow_bg.png) 0 0 no-repeat;background-size:100% auto; padding-left: 31px; line-height: 60px; color: #ec1e24; font-size: 36px; }
+#storyPage #header{position:absolute;width:100%;bottom:33px;left:0;}
+
+/*动画类*/
+.breathe{-webkit-transform: translate3d(0, 0, 0);-webkit-animation:breathe 1.5s infinite 0.3s;}
+.finger{-webkit-animation:finger .5s infinite 1s;}
+.circle{-webkit-animation:circle 15s infinite forwards;}
+
+/*动画效果*/
+@-webkit-keyframes breathe {
+	0% {opacity: .4}
+	20% {opacity: .6}
+	40% {opacity: .8}
+	50% {opacity: 1}
+	60% {opacity: .8}
+	80% {opacity: .6}
+	100% {opacity: .4}
+}
+@-webkit-keyframes finger {
+	0% {-webkit-transform: scale(1, 1);}
+	100% {-webkit-transform: scale(1.1, 1.1);}
+}
+@-webkit-keyframes bottomToTop{
+	0% {bottom:-999px;}
+	100% {bottom:0;}
+}
+@-webkit-keyframes bottomToTop{
+	0% {bottom:-999px;}
+	100% {bottom:0;}
+}
+@-webkit-keyframes circle{
+	0%{-webkit-transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(360deg);}
+}
+/*iscroll*/
+html{-ms-touch-action: none;}
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 135px;
+	bottom: 154px;
+	left: 0;
+	width: 100%;
+	background: #f3fcff;
+	overflow: hidden;
+}
+#scroller {
+	position: absolute;
+	z-index: 1;
+	color:#576d6d;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#scroller article{font-size:28px;line-height:38px;padding:30px 54px;}
+#scroller h2{margin-bottom:30px;font-size:36px;font-weight:normal;text-align:center;}
+#scroller .img{text-align:center;margin:30px 0;}
+#scroller p{text-indent:2em;margin-bottom:35px;}
+/*结果页*/
+#result_score{position:absolute;width:100%;top:35px;color:#819abe;text-align:center;}
+#result_score .text1{font-size:36px;line-height:36px;}
+#result_score .text1 > var,#result_score .text2 var{font-size:48px;color:#ec1e24;padding:0 10px;font-family:Arial;}
+#result_score .text2{margin:17px 0 15px;font-size:30px;line-height:30px;}
+#result_score_img{position:absolute;width:100%;top:320px;text-align:center;color:#5b7498;font-size:30px;}
+/*横屏设置*/
+.orientation_set{display:none;}
+@media screen and (orientation:landscape){
+	.orientation_set{display:block; position:fixed;top:0;left:0;color:#fdd900;width:100%;height:100%;background:#ec1e24;text-align:center; display:-webkit-box;-weibit-box-pack:center;-webkit-box-align:center;z-index:999;font-size:20px;font-weight:bold;}
+	.orientation_set img{display:inline-block;-webkit-animation:zhuan 1.5s .3s infinite;}
+	.orientation_set > div{width:100%;}
+}
